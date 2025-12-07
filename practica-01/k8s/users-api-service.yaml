@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: users-api
+  namespace: ecommerce-platform
+  labels:
+    app: users-api
+spec:
+  type: ClusterIP  # Solo accesible internamente en el cluster
+  selector:
+    app: users-api
+  ports:
+  - port: 8000
+    targetPort: 8000
+    protocol: TCP
+    name: http
