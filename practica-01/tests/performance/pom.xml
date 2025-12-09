@@ -26,6 +26,12 @@
             <version>${scala.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.gatling.highcharts</groupId>
+            <artifactId>gatling-charts-highcharts</artifactId>
+            <version>${gatling.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -67,8 +73,10 @@
                 <version>4.3.0</version>
                 <configuration>
                     <simulationsFolder>src/test/scala</simulationsFolder>
+                    <runMultipleSimulations>true</runMultipleSimulations>
                     <includes>
                         <include>performance.UsersSimulation</include>
+                        <include>performance.OrdersStressTest</include>
                     </includes>
                 </configuration>
             </plugin>
